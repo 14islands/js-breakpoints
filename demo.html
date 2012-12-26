@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8" />
+    <title>Javascript Breakpoints test page</title>
+    <style>
+
+      body {
+        font-family: sans-serif;
+        font-size: 22px;
+      }
+
+      div {
+        background-color: hotpink;
+      }
+
+      @media screen and (min-width: 600px) {
+        
+        div {
+          background-color: yellow;
+        }
+        body:after {
+    			display:none;
+    			content: "BIG_SCREEN_BREAKPOINT";
+        }
+      
+      }
+    </style> 
+  </head>
+<body>
+  <p>Test by resizing the width of the browser over & under 600px. </p>
+  <div id="test">Loading</div>
+ 
+  <script src="breakpoints.js" ></script>
+	<script>
+
+    var testEl = document.getElementById("test");
+
+		var b = Breakpoints.on({
+			name: "BIG_SCREEN_BREAKPOINT",
+			el: document.body,
+			matched: function() {
+				testEl.innerHTML = "Breakpoint is matched";
+			},
+			exit: function() {
+				testEl.innerHTML = "Breakpoint is exited";
+			}
+		});
+
+		if (b.notMatched()) {
+			testEl.innerHTML = "Breakpoint is not matched";
+		}
+
+	</script>
+</body>
+</html>
