@@ -1,6 +1,6 @@
 # Javascript Breakpoints
 
-A small library that uses CSS media queries to trigger breakpoint changes in Javascript.   Helpful to change application logic for different screen sizes, resolutions or [other media query options]().
+A small library that uses CSS media queries to trigger breakpoint changes in Javascript.   Helpful to change application logic for different screen sizes, resolutions or [other media query features](http://www.w3.org/TR/css3-mediaqueries/#media1).
 
 
 ## Example using Sass & Javascript
@@ -133,9 +133,9 @@ Works on all major browsers.
 
 ## Contributors
 
-Hjörtur Hilmarsson - [@hjortureh](https://twitter.com/hjortureh)
-David Lindkvist - [@ffdead](https://twitter.com/ffdead)
-Anders Jönsson - [@anjonsson](https://twitter.com/anjonsson)
+Hjörtur Hilmarsson [@hjortureh](https://twitter.com/hjortureh)
+David Lindkvist [@ffdead](https://twitter.com/ffdead)
+Anders Jönsson [@anjonsson](https://twitter.com/anjonsson)
 
 
 
