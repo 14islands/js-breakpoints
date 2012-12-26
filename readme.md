@@ -81,6 +81,10 @@ There can only one breakpoint active per DOM element. If DOM elements have multi
 
 Not standard compliance.  Using the content attribute to host data is not a standard way to use it.  Using the html5 data attribute would be much nicer if it was possible to change that with CSS.
 
+### Why not use matchMedia?
+
+An other way to accomplish breakpoints in Javascript is to use the **matchMedia** method of the Windows object.  The problem is it requires us to keep track of the breakpoints in two places,  both in the CSS and Javascript.
+
 
 ## Breakpoint Model Object 
 
@@ -133,9 +137,9 @@ Works on all major browsers.
 
 ## Contributors
 
-Hjörtur Hilmarsson [@hjortureh](https://twitter.com/hjortureh)
-David Lindkvist [@ffdead](https://twitter.com/ffdead)
-Anders Jönsson [@anjonsson](https://twitter.com/anjonsson)
+* Hjörtur Hilmarsson [@hjortureh](https://twitter.com/hjortureh)
+* David Lindkvist [@ffdead](https://twitter.com/ffdead)
+* Anders Jönsson [@anjonsson](https://twitter.com/anjonsson)
 
 
 
