@@ -40,7 +40,7 @@ The **matched** event is fired when the media query is matched but the **exit** 
 
 ### Why not use matchMedia?
 
-An other way to accomplish breakpoints in Javascript is to use the [**window.matchMedia** method](https://developer.mozilla.org/en-US/docs/DOM/window.matchMedia).  The problem is that it requires us to keep track of the breakpoints in two places,  both in the CSS and Javascript,  than can be hard to manage on bigger projects.
+An other way to accomplish breakpoints in Javascript is to use the [**window.matchMedia** method](https://developer.mozilla.org/en-US/docs/DOM/window.matchMedia).  The problem is that it requires us to keep track of the breakpoints in two places,  both in the CSS and Javascript,  that can be hard to manage on bigger projects.
 
 
 ## Recommendations
@@ -57,7 +57,7 @@ Mobile first is also good when implementing the CSS and makes the code simpler t
 
 ### Define breakpoints based on content
 
-There are so many different screen sizes and resolutions on devices today that its close to impossible to set breakpoints to fit all the variations.  
+There are so many different screen sizes and resolutions on devices today that it's close to impossible to set breakpoints to fit all these variations.  
 
 A more sensible approach in most cases is to define different breakpoints based on the content.  Javascript Breakpoints are defined on DOM elements so its possible to have breakpoints that are specific for the content at hand.
 
@@ -77,16 +77,17 @@ This is how the CSS looks without any **mixin**.
 }
 ```
 
+A simple example of how the matching works can be found here: https://github.com/archive/breakpoints/blob/master/share-between-css-and-javascript/index.html
+
 The matching in the Javascript is done on **initialization**, **onresize** and **onorientationchange** events.   There is a few milliseconds delay when matching on resize and orientation change to make sure matching is not done to multiple times. 
 
-A simple example of how the matching works can be found here: https://github.com/archive/breakpoints/blob/master/share-between-css-and-javascript/index.html
 
 
 ### Limitations
 
 There can only one breakpoint active per DOM element. If DOM elements have multiple breakpoints, only the most specific media query will fire the associated Javascript handler. 
 
-Not standard compliance.  Using the content attribute to host data is not a standard way to use it.  Using the html5 data attribute would be much nicer if it was possible to change that with CSS.
+This approach is not standard compliance.  Using the content attribute to host data is not a standard way to use it.  Using the html5 data attribute would be much nicer if it was possible to change that with CSS.
 
 
 ## Breakpoint Model Object 
@@ -135,7 +136,7 @@ Provides a way to check if a breakpoint is entered without firing any events.  R
 
 ## Browser support
 
-Works on all major browsers.
+Works on modern browsers.
 
 
 ## Contributors
