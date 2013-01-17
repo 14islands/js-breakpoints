@@ -16,7 +16,7 @@
       }
 
       @media screen and (min-width: 600px) {
-        
+
         div {
           background-color: yellow;
         }
@@ -24,14 +24,14 @@
     			display:none;
     			content: "BIG_SCREEN_BREAKPOINT";
         }
-      
+
       }
-    </style> 
+    </style>
   </head>
 <body>
   <p>Test by resizing the width of the browser over & under 600px. </p>
   <div id="test">Loading</div>
- 
+
   <script src="breakpoints.js" ></script>
 	<script>
 
@@ -41,15 +41,15 @@
 			name: "BIG_SCREEN_BREAKPOINT",
 			el: document.body,
 			matched: function() {
-				testEl.innerHTML = "Breakpoint is matched";
+        testEl.textContent = "Breakpoint is matched";
 			},
 			exit: function() {
-				testEl.innerHTML = "Breakpoint is exited";
+        testEl.textContent = "Breakpoint is exited";
 			}
 		});
 
 		if (b.notMatched()) {
-			testEl.innerHTML = "Breakpoint is not matched";
+			testEl.textContent = "Breakpoint is not matched";
 		}
 
 	</script>

@@ -3,9 +3,9 @@
 window.Breakpoints = (function (window, document) {
 	'use strict';
 
-	var B = {},	
+	var B = {},
 	resizingTimeout = 200,
-	breakpoints = [], 
+	breakpoints = [],
 
 	debounce = function (func, wait, immediate) {
 		var timeout, result;
@@ -25,11 +25,18 @@ window.Breakpoints = (function (window, document) {
 		};
 	},
 
+	removeDoubleQuotes = function (content) {
+		if(content && content.length) {
+			return content.replace(/\"/g, "");
+		}
+		return "";
+	},
+
 	check = function (breakpoint) {
 		var match = B.isMatched(breakpoint);
 	    breakpoint.matched = breakpoint.matched || function() {};
 	    breakpoint.exit = breakpoint.exit || function() {};
-	    
+
 		if (match && !breakpoint.isMatched) {
 			breakpoint.matched.call(breakpoint.context);
 			breakpoint.isMatched = true;
@@ -54,9 +61,10 @@ window.Breakpoints = (function (window, document) {
 	};
 
 	B.isMatched = function(breakpoint) {
-		breakpoint.el = breakpoint.el || document.body; 
+		breakpoint.el = breakpoint.el || document.body;
 
 		var content = window.getComputedStyle(breakpoint.el, ':after').getPropertyValue('content');
+		content = removeDoubleQuotes(content)
 		return breakpoint.name === content;
 	};
 
@@ -71,7 +79,7 @@ window.Breakpoints = (function (window, document) {
 				callback();
 				return true;
 			}
-			return false; 
+			return false;
 		};
 
 
