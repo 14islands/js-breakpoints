@@ -136,7 +136,7 @@ Provides a way to check if a breakpoint is entered without firing any events.  R
 
 ## Browser support
 
-Works on all modern browsers.
+Works on all modern browsers.  Or to be more specific,  all browsers that support computedStyle for pseudo elements: http://caniuse.com/#feat=getcomputedstyle
 
 
 ## Contributors
