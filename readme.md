@@ -138,6 +138,14 @@ Provides a way to check if a breakpoint is entered without firing any events.  R
 
 Works on all modern browsers.  Or to be more specific,  all browsers that support computedStyle for pseudo elements: http://caniuse.com/#feat=getcomputedstyle
 
+In order to prevent your breakpoints from breaking older version of IE and FireFox, you can wrap your `Breakpoint.on` in:
+
+```javascript
+if(window.getComputedStyle !== undefined) {
+	...
+}
+```
+
 
 ## Contributors
 
