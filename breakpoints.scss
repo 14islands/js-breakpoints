@@ -4,16 +4,15 @@ html:after {
 	display: none;
 }
 
-.defineBreakpoint(@name) {
+@mixin defineBreakpoint($name) {
 	// store active breakpoint name in ::pseudo content
 	&:after {
-		content: @name;
+		content: $name;
 		display: none;
 	}
-
+	
 	// add fallback style using breakpoint name
-	@unquotedName: ~"@{name}";
-	.js-breakpoints-@{unquotedName} {
+	.js-breakpoints-#{$name} {
 		position: absolute;
 	}
 }
