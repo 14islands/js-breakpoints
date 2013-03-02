@@ -4,7 +4,7 @@ Small library that syncs CSS media queries to breakpoint events in JavaScript. H
 
 The main benefit is that you only need to maintain your media queries in one place - in the CSS where they belong.
 
-[View demo](http://14islands.github.com/js-breakpoints/) 
+[View demo](http://14islands.github.com/js-breakpoints/demo/) 
 
 
 ## Example using SASS mixin & JavaScript
