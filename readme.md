@@ -33,14 +33,14 @@ The following Javascript is then used to register event handlers for the **match
 Breakpoints.on({
 	name: "GENERIC_BIG_SCREEN_BREAKPOINT",
 	matched: function(){ /* some js logic to activate*/ },
-	exit: function(){ /* disa someble js logic*/ },
+	exit: function(){ /* disable some js logic*/ },
 });
 
 Breakpoints.on({
 	name: "SPECIFIC_CONTENT_BREAKPOINT",
 	el: document.getElementById("myElement"),
 	matched: function(){ /* some js logic to activate*/ },
-	exit: function(){ /* disa someble js logic*/ },
+	exit: function(){ /* disable some js logic*/ },
 });
 ```
 
