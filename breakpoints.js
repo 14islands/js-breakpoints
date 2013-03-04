@@ -105,7 +105,6 @@ window.Breakpoints = (function (window, document) {
 		else {
 			injectElementWithClassName(el, breakpoint.name, function (el) {
 				value = getStyle(el, '', TEST_FALLBACK_PROPERTY);
-				alert(value + ' = ' + TEST_FALLBACK_VALUE);
 				matched = value === TEST_FALLBACK_VALUE;
 			});
 		}
