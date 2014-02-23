@@ -1,14 +1,14 @@
 html:after {
 	// used to test if browser can read getComputedStyle on pseudo elements
 	content: "js-breakpoints-getComputedStyleTest";
-	display: none;
+	visibility: hidden;
 }
 
 .defineBreakpoint(@name) {
 	// store active breakpoint name in ::pseudo content
 	&:after {
 		content: @name;
-		display: none;
+		visibility: hidden;
 	}
 
 	// add fallback style using breakpoint name
