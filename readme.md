@@ -84,11 +84,13 @@ Old browsers, without support for window.getComputedStyle() on psuedo elements, 
 
 ### Limitations
 
-There can only one breakpoint active per DOM element. If DOM elements have multiple breakpoints, only the most specific media query will fire the associated JavaScript handler. 
+- There can only be one breakpoint active per DOM element. If DOM elements have multiple breakpoints, only the most specific media query will fire the associated JavaScript handler. 
 
-Using the content attribute to host data is not a standard way to use it.
+- Using the content attribute to host data is not a standard way to use it.
 
-The library uses the content property of html:after to check for full support for window.getComputedStyle(). If this value is modified the library will always run in fallback mode.
+- The library uses the content property of html:after to check for full support for window.getComputedStyle(). If this value is modified the library will always run in fallback mode.
+
+- Placing these breakpoints/media queries on an element that has a .clearfix class applied to it (or element with a class that @extend .clearfix) can cause layout issues because of the pseudo ":after" in this media query and overriding that of the .clearfix.
 
 
 ## Breakpoint Model Object 
