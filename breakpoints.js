@@ -16,7 +16,7 @@ window.Breakpoints = (function (window, document) {
 	addEvent = function (obj, type, fn) {
 	  if (obj.attachEvent) {
 	    obj['e'+type+fn] = fn;
-	    obj[type+fn] = function () {obj['e'+type+fn]( window.event );}
+	    obj[type+fn] = function () {obj['e'+type+fn]( window.event );};
 	    obj.attachEvent('on'+type, obj[type+fn]);
 	  } else {
 	    obj.addEventListener(type, fn, false);
@@ -81,7 +81,7 @@ window.Breakpoints = (function (window, document) {
 	checkComputedStyleSupport = function () {
 		if (window.getComputedStyle) {
 			var content = window.getComputedStyle(document.documentElement, ':after').getPropertyValue('content');
-			hasFullComputedStyleSupport = content === TEST_FULL_GETCOMPUTEDSTYLE_SUPPORT;
+			hasFullComputedStyleSupport = content.replace(/\"/g, "") === TEST_FULL_GETCOMPUTEDSTYLE_SUPPORT;
 		}
 	},
 
@@ -97,8 +97,8 @@ window.Breakpoints = (function (window, document) {
 		var el = breakpoint.el || document.body,
 		    matched = false,
 		    value;
-		    
-		if (hasFullComputedStyleSupport) {		
+
+		if (hasFullComputedStyleSupport) {
 			value = getStyle(el, ':after', 'content');
 			matched = value.replace(/\"/g, "") === breakpoint.name;
 		}
@@ -108,7 +108,7 @@ window.Breakpoints = (function (window, document) {
 				matched = value === TEST_FALLBACK_VALUE;
 			});
 		}
-		
+
 		return matched;
 	};
 
@@ -116,7 +116,7 @@ window.Breakpoints = (function (window, document) {
 		breakpoints.push(breakpoint);
 		breakpoint.isMatched = false;
 		breakpoint.matched = breakpoint.matched || function() {};
-		breakpoint.exit = breakpoint.exit || function() {}
+		breakpoint.exit = breakpoint.exit || function() {};
 		breakpoint.context = breakpoint.context || breakpoint;
 		return check(breakpoint);
 	};
@@ -126,12 +126,11 @@ window.Breakpoints = (function (window, document) {
 		if (i > -1) {
 			breakpoints.splice(i, 1);
 		}
-	}
+	};
 
 	return init();
 
 })(window, document);
-
 
 
 
