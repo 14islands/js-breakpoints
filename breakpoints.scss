@@ -2,6 +2,8 @@ html:after {
 	// used to test if browser can read getComputedStyle on pseudo elements
 	content: "js-breakpoints-getComputedStyleTest";
 	visibility: hidden;
+	position: absolute;
+ 	clip: rect(0 0 0 0);
 }
 
 @mixin defineBreakpoint($name) {
@@ -9,6 +11,8 @@ html:after {
 	&:after {
 		content: $name;
 		visibility: hidden;
+		position: absolute;
+ 		clip: rect(0 0 0 0);
 	}
 	
 	// add fallback style using breakpoint name
