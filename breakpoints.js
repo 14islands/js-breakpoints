@@ -6,7 +6,7 @@ window.Breakpoints = (function (window, document) {
 	var B = {},
 	resizingTimeout = 200,
 	breakpoints = [],
-	hasFullComputedStyleSupport = false,
+	hasFullComputedStyleSupport = null,
 
 	TEST_FULL_GETCOMPUTEDSTYLE_SUPPORT = 'js-breakpoints-getComputedStyleTest',
 	TEST_FALLBACK_PROPERTY = 'position',
@@ -78,7 +78,17 @@ window.Breakpoints = (function (window, document) {
 		return '';
 	},
 
+	/*
+	 * If not already checked:
+	 * 1. check if we have getComputedStyle and check if we can read pseudo elements
+	 */
 	checkComputedStyleSupport = function () {
+		if (hasFullComputedStyleSupport !== null) {
+			return;
+		}
+
+		hasFullComputedStyleSupport = false;
+		
 		if (window.getComputedStyle) {
 			var content = window.getComputedStyle(document.documentElement, ':after').getPropertyValue('content');
 			hasFullComputedStyleSupport = content.replace(/\"/g, "") === TEST_FULL_GETCOMPUTEDSTYLE_SUPPORT;
@@ -86,7 +96,6 @@ window.Breakpoints = (function (window, document) {
 	},
 
 	init = function () {
-		checkComputedStyleSupport();
 		var debounceResize = debounce( onWindowResize, resizingTimeout);
 		addEvent(window, 'resize', debounceResize);
 		addEvent(window, 'orientationchange', debounceResize);
@@ -113,6 +122,7 @@ window.Breakpoints = (function (window, document) {
 	};
 
 	B.on = function(breakpoint) {
+		checkComputedStyleSupport();
 		breakpoints.push(breakpoint);
 		breakpoint.isMatched = false;
 		breakpoint.matched = breakpoint.matched || function() {};
@@ -131,6 +141,3 @@ window.Breakpoints = (function (window, document) {
 	return init();
 
 })(window, document);
-
-
-
