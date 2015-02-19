@@ -4,6 +4,9 @@ html:after {
 	visibility: hidden;
 	position: absolute;
  	clip: rect(0 0 0 0);
+ 	overflow:hidden;
+ 	width: 0;
+ 	height: 0;
 }
 
 .defineBreakpoint(@name) {
@@ -13,6 +16,9 @@ html:after {
 		visibility: hidden;
 		position: absolute;
  		clip: rect(0 0 0 0);
+ 		overflow:hidden;
+	 	width: 0;
+	 	height: 0;
 	}
 
 	// add fallback style using breakpoint name
