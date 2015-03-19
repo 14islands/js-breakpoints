@@ -3,7 +3,10 @@ html:after {
 	content: "js-breakpoints-getComputedStyleTest";
 	visibility: hidden;
 	position: absolute;
- 	clip: rect(0 0 0 0);
+	clip: rect(0 0 0 0);
+ 	overflow: hidden; 		
+ 	width: 0;
+ 	height: 0;
 }
 
 @mixin defineBreakpoint($name) {
@@ -11,8 +14,11 @@ html:after {
 	&:after {
 		content: $name;
 		visibility: hidden;
-		position: absolute;
+		position: absolute;		
  		clip: rect(0 0 0 0);
+ 		overflow: hidden;
+	 	width: 0;
+	 	height: 0;
 	}
 	
 	// add fallback style using breakpoint name
