@@ -1,6 +1,6 @@
 {
   "name": "js-breakpoints",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./breakpoints.js",
   "dependencies": {},
   "description": "Library that uses CSS media queries to trigger breakpoints in Javascript",
