@@ -1,0 +1,28 @@
+{
+  "name": "js-breakpoints",
+  "version": "1.0.2",
+  "description": "Library that uses CSS media queries to trigger breakpoints in Javascript.",
+  "main": "breakpoints.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/14islands/js-breakpoints.git"
+  },
+  "keywords": [
+    "sass",
+    "less",
+    "javascript",
+    "breakpoints",
+    "media",
+    "queries",
+    "responsive"
+  ],
+  "author": "14islands",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/14islands/js-breakpoints/issues"
+  },
+  "homepage": "https://github.com/14islands/js-breakpoints"
+}
